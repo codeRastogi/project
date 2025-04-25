@@ -70,6 +70,46 @@ const capabilities = [
         'Campaign Kits',
       ],
     },
+
+    // ------------------------ TECHNOLOGY & IT ------------------------
+  {
+    category: 'TECHNOLOGY & IT',
+    title: 'Web & App Development',
+    items: [
+      'Landing Pages',
+      'Web Apps',
+      'Mobile Apps',
+    ],
+  },
+  {
+    category: 'TECHNOLOGY & IT',
+    title: 'Automation & Scripting',
+    items: [
+      'Process Automation',
+      'Task Scheduling',
+      'Custom Scripts',
+    ],
+  },
+
+  // ------------------------ RESEARCH & DATA ------------------------
+  {
+    category: 'RESEARCH & DATA',
+    title: 'Market Research',
+    items: [
+      'Competitor Analysis',
+      'Customer Surveys',
+      'Trends & Insights',
+    ],
+  },
+  {
+    category: 'RESEARCH & DATA',
+    title: 'Data Analytics',
+    items: [
+      'Dashboards',
+      'Data Cleaning',
+      'Data Visualization',
+    ],
+  },
   ];
   
   export default capabilities;

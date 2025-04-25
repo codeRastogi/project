@@ -1,4 +1,5 @@
 import ServiceSection from "./components/ServiceSection"
+import SpecialFeatures from "./components/SpecialFeatures"
 
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
      <div className="bg-black">
      <ServiceSection />
+     <SpecialFeatures />
      </div>
     </>
   )
