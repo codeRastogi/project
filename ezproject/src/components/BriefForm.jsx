@@ -61,10 +61,10 @@ const BriefForm = () => {
   
 
   return (
-    <div className="flex max-h-4xl font-sans bg-amber-300 text-black">
+    <div className="flex flex-col lg:flex-row max-h-4xl font-sans bg-blue-950 text-black">
       {/* Left Panel with Background Image */}
       <div
-        className="w-1/2 bg-cover bg-center text-white p-10"
+        className="w-full lg:w-1/2 bg-cover bg-center text-white p-10"
         style={{ backgroundImage: 'url(/your-bg-image-path.png)' }} // replace with actual path
       >
         <h2 className="text-3xl font-bold">Send us a brief</h2>
@@ -76,7 +76,7 @@ const BriefForm = () => {
       {/* Right Panel with Form */}
       <form
         onSubmit={handleSubmit}
-        className="w-1/2 p-10 bg-white shadow-md rounded space-y-4"
+        className="w-full lg:w-1/2 p-10 bg-white shadow-md rounded space-y-4"
       >
         <input
           name="name"

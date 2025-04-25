@@ -5,7 +5,6 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import BriefForm from './BriefForm';
 
 
-
 // Group capabilities by their category
 const groupByCategory = capabilities.reduce((acc, curr) => {
     if (!acc[curr.category]) acc[curr.category] = [];
@@ -16,10 +15,8 @@ const groupByCategory = capabilities.reduce((acc, curr) => {
 // Extract all category names
 const categories = Object.keys(groupByCategory);
 
-
-
 const ServiceSection = () => {
-    const[showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0); // index of currently displayed capability card
     const containerRef = useRef(null);
     const [categoryIndex, setCategoryIndex] = useState(0); // index of current active category
@@ -90,7 +87,6 @@ const ServiceSection = () => {
 
             {/* Category selector carousel */}
             <div className="flex items-center mb-10 relative justify-between">
-
                 {visibleCategories.map((category, idx) => (
                     <button
                         key={category}
@@ -115,17 +111,17 @@ const ServiceSection = () => {
                 <motion.div
                     onClick={prev}
                     ref={containerRef}
-                    className="w-[340px] h-[400px] bg-gradient-to-br from-gray-900 to-black/80 text-white rounded-xl p-6 shadow-xl border border-white/10 transform translate-x-[70%] opacity-20"
+                    className="w-full sm:w-[340px] h-[400px] bg-gradient-to-br from-gray-900 to-black/80 text-white rounded-xl p-6 shadow-xl border border-white/10 transform translate-x-[70%] opacity-20"
                     {...dragProps}
                 >
                     {/* Title */}
                     <h3 className="text-lg font-semibold text-center mb-2 border-b border-white/20 pb-2">
-                        {capabilities[(activeIndex - 1 + capabilities.length)%capabilities.length].title}
+                        {capabilities[(activeIndex - 1 + capabilities.length) % capabilities.length].title}
                     </h3>
 
                     {/* Grid of Items */}
                     <div className="grid grid-cols-3 gap-4 mt-4">
-                        {capabilities[(activeIndex - 1 + capabilities.length)%capabilities.length].items.map((item, idx) => (
+                        {capabilities[(activeIndex - 1 + capabilities.length) % capabilities.length].items.map((item, idx) => (
                             <div
                                 key={idx}
                                 className="bg-white/10 text-sm text-center rounded-lg p-3 flex flex-col items-center justify-center hover:bg-white/20 transition duration-200"
@@ -143,7 +139,7 @@ const ServiceSection = () => {
 
                 <motion.div
                     ref={containerRef}
-                    className="w-[340px] h-[400px] bg-gradient-to-br from-gray-900 to-black/80 text-white rounded-xl p-6 shadow-xl border border-white/10 z-10"
+                    className="w-full sm:w-[340px] h-[400px] bg-gradient-to-br from-gray-900 to-black/80 text-white rounded-xl p-6 shadow-xl border border-white/10 z-10"
                     {...dragProps}
                 >
                     {/* Title */}
@@ -172,17 +168,17 @@ const ServiceSection = () => {
                 <motion.div
                     onClick={next}
                     ref={containerRef}
-                    className="w-[340px] h-[400px] bg-gradient-to-br from-gray-900 to-black/80 text-white rounded-xl p-6 shadow-xl border border-white/10 opacity-20  transform translate-x-[-70%]"
+                    className="w-full sm:w-[340px] h-[400px] bg-gradient-to-br from-gray-900 to-black/80 text-white rounded-xl p-6 shadow-xl border border-white/10 opacity-20  transform translate-x-[-70%]"
                     {...dragProps}
                 >
                     {/* Title */}
                     <h3 className="text-lg font-semibold text-center mb-2 border-b border-white/20 pb-2">
-                        {capabilities[(activeIndex + 1)%capabilities.length].title}
+                        {capabilities[(activeIndex + 1) % capabilities.length].title}
                     </h3>
 
                     {/* Grid of Items */}
                     <div className="grid grid-cols-3 gap-4 mt-4">
-                        {capabilities[(activeIndex + 1)%capabilities.length].items.map((item, idx) => (
+                        {capabilities[(activeIndex + 1) % capabilities.length].items.map((item, idx) => (
                             <div
                                 key={idx}
                                 className="bg-white/10 text-sm text-center rounded-lg p-3 flex flex-col items-center justify-center hover:bg-white/20 transition duration-200"
@@ -197,7 +193,6 @@ const ServiceSection = () => {
                         ))}
                     </div>
                 </motion.div>
-
 
                 <button onClick={next} className="absolute right-0 z-10 p-2">
                     <ChevronRight size={32} />
@@ -226,19 +221,18 @@ const ServiceSection = () => {
                 </button>
             </div>
             {showForm && (
-  <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center">
-    <div className="relative w-full max-w-4xl bg-white rounded-xl overflow-hidden shadow-lg">
-      <button
-        onClick={() => setShowForm(false)}
-        className="absolute top-2 right-2 text-black bg-gray-200 hover:bg-gray-300 rounded-full p-1 z-10"
-      >
-        ×
-      </button>
-      <BriefForm />
-    </div>
-  </div>
-)}
-
+                <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center">
+                    <div className="relative w-full max-w-4xl bg-white rounded-xl overflow-hidden shadow-lg">
+                        <button
+                            onClick={() => setShowForm(false)}
+                            className="absolute top-2 right-2 text-black bg-gray-200 hover:bg-gray-300 rounded-full p-1 z-10"
+                        >
+                            ×
+                        </button>
+                        <BriefForm />
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

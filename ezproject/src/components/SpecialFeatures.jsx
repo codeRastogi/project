@@ -12,9 +12,9 @@ const SpecialFeatures = () => {
       </div>
 
       {/* Bottom Content */}
-      <div className="flex flex-1 justify-between gap-10 px-10">
+      <div className="flex flex-col lg:flex-row flex-1 justify-between gap-10 px-10">
         {/* Left Side - 10-20-30 Rule */}
-        <div className="flex flex-col items-start w-1/2 pl-[10vw]">
+        <div className="flex flex-col items-start  lg:w-1/2 w-full pl-[10vw] lg:pl-[8vw]">
           <h2 className="text-3xl font-semibold text-gray-800 mb-6">
             The 10-20-30 Rule at EZ
           </h2>
@@ -65,10 +65,10 @@ const SpecialFeatures = () => {
         </div>
 
         {/* Vertical Divider */}
-        <div className="w-[2px] h-[70vh] bg-blue-950"></div>
+        <div className="w-[2px] lg:h-[70vh] h-[2px] lg:w-[2px] bg-blue-950 my-6 lg:my-0"></div>
 
         {/* Right Side */}
-        <div className="w-1/2">
+        <div className="lg:w-1/2 w-full">
           <SpecialCards />
         </div>
       </div>
